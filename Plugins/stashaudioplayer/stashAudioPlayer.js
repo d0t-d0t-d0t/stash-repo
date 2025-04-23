@@ -2,7 +2,7 @@
 (async function () {
     "use strict"
 
-    const { waitForElement, PathElementListener, getConfiguration, callGQL } = window.csLib
+    const { waitForElement, PathElementListener, getConfiguration, callGQL, baseURL } = window.csLib
 
     const defaultConfig = { audioExtensions: "mp3, m4a", useTag: false }
     const config = await getConfiguration("stashAudioPlayer", defaultConfig)
@@ -63,7 +63,7 @@
 
     async function getScene() {
         const currentPath = window.location.pathname
-        const idRegExp = /^\/scenes\/(\d+).*/
+        const idRegExp = /\/scenes\/(\d+).*/
         const id = idRegExp.exec(currentPath)[1]
         const query = `query FindScene($id: ID!, $checksum: String) {findScene(id: $id, checksum: $checksum) { id\n files { id\n path\n __typename }\n tags { id\n name\n __typename }\n __typename}}`
         const variables = { id }
@@ -102,7 +102,7 @@
     }
 
     PathElementListener(
-        "/scenes/",
+       baseURL + "scenes/",
         "#VideoJsPlayer > div.vjs-control-bar > div.vjs-source-selector.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button > div > ul > li > span.vjs-menu-item-text",
         async function () {
             const sceneInfo = await getScene()
