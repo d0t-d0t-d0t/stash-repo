@@ -6,14 +6,14 @@
   version: 0.3-9228aad
   date: 2025-04-23 05:42:10
   path: stashAudioPlayer.zip
-  sha256: 0c9cce329cc1538f717f1113bcff4a5ce3cab4acb24bc737d6215acba10aed0c
+  sha256: 0a0c59135d853e151962f36d29dfee368ecac0438a5a24124032538f2b79c548
   requires:
     - CommunityScriptsUILibrary
 - id: stashAudioPlayerLite
   name: StashAudioPlayerLite
   metadata:
     description: This plugin identifies files with no video codec and plays them as audio.
-  version: 0.1-191fb72
-  date: 2025-05-01 20:24:55
+  version: 0.1-d6bee4c
+  date: 2025-05-01 20:26:16
   path: stashAudioPlayerLite.zip
-  sha256: c629be5bf46350ecbe5f86aaa80b95590aa65914efbf5c1545b9028a73c01f42
+  sha256: 1d9812526300b62ace3deb5ac98af322cf46bddae990e2ec1db8c4423c927dbf
